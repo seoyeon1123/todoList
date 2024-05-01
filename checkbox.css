@@ -1,0 +1,29 @@
+input[type="checkbox"].custom-checkbox {
+  display: none;
+}
+
+/* 커스텀 체크 박스 스타일 */
+input[type="checkbox"].custom-checkbox + label {
+  position: relative;
+  padding-left: 25px; /* 체크 박스와 레이블 사이 간격 조정 */
+  cursor: pointer;
+}
+
+/* 커스텀 체크 표시 */
+input[type="checkbox"].custom-checkbox + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border: 1px solid rgb(179, 92, 42);
+  border-radius: 100%;
+}
+
+/* 체크됐을 때의 커스텀 체크 표시 */
+input[type="checkbox"].custom-checkbox:checked + label:before {
+  background-color: rgb(179, 92, 42);
+}

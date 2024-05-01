@@ -6,14 +6,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ToDoList</title>
   <link rel="stylesheet" href="./index.css">
-  <script defer src="./index.js"></script>
+  <script defer src="./todo.js"></script>
+  <script defer src="./date.js"></script>
+  <script defer src="./day.js"></script>
 </head>
 </head>
 
 <body>
-  <h1 class="title">오늘의 할 일을 무엇인가요?</h1>
-  <input type="text" class="inputTodo">
-  <ul class="todoList"></ul>
+  <header>
+    <p class="date">📆 Date: <span id="todaysDate"></span>
+    </p>
+    <h1 class="title">To Do List</h1>
+    <p class="title_descrip">"Today's To-Do List"</p>
+  </header>
+
+  <section>
+    <div>
+      <input type="checkbox" class="type" id="business">
+      <label for="business">Business</label>
+      <input type="checkbox" class="type" id="private">
+      <label for="private">Private</label>
+    </div>
+
+  </section>
+
+  <section class="todo">
+    <label for="inputTodo" class="inputTitle">
+      Todo :
+    </label>
+    <input type="text" class="inputTodo">
+    <ul class="todoList">
+    </ul>
+  </section>
+
+  <section class="diary">
+    <p class="diary-description">How was your day?</p>
+    <input type="text" class="today">
+    <button type="submit">Send</button>
+  </section>
+
+  <footer>
+
+  </footer>
 
 </body>
 

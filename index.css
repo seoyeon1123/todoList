@@ -1,3 +1,149 @@
+@font-face {
+  font-family: "Jua";
+  src: url(./Jua-Regular.ttf);
+}
+
+/* header */
+body {
+  font-family: "Jua";
+  text-align: center;
+  background-image: url("background.jpg");
+  margin: 10% 30% 10% 30%;
+}
+
+.date {
+  text-align: left;
+  color: white;
+  font-size: 20px;
+}
+
+#date {
+  margin-top: 0.4rem;
+}
+
 .title {
-  font-size: 3em;
+  font-size: 6em;
+  color: rgb(255, 255, 255);
+  margin-bottom: 0;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+#todaysDate {
+  font-size: 1em;
+  color: rgb(255, 255, 255);
+  margin-top: 0;
+  font-weight: lighter;
+}
+
+.title_descrip {
+  color: rgb(179, 92, 42);
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
+/* section 시작*/
+div {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.type {
+  /* 여기에 공통적인 스타일을 적용합니다 */
+  display: none;
+}
+
+/* 커스텀 체크 박스 스타일 */
+.type + label {
+  position: relative;
+  padding-left: 25px; /* 체크 박스와 레이블 사이 간격 조정 */
+  cursor: pointer;
+}
+
+/* 커스텀 체크 표시 */
+.type + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border: 1px solid rgb(179, 92, 42);
+  border-radius: 100%;
+}
+
+/* 체크됐을 때의 커스텀 체크 표시 */
+.type:checked + label:before {
+  background-color: rgb(179, 92, 42);
+}
+
+.todo,
+.diary {
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 10%;
+  height: 300px;
+}
+
+.inputTodo {
+  font-size: 15px;
+  color: #565555;
+  width: 300px;
+  border: none;
+  border-bottom: solid #aaaaaa 1px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  position: relative;
+  background: none;
+  z-index: 5;
+}
+
+.inputTodo:focus {
+  outline: none;
+}
+
+.todo {
+  border-radius: 20px 20px 0 0;
+}
+
+.todoList {
+  font-weight: lighter;
+  color: rgb(179, 92, 42, 0.6);
+}
+
+.diary {
+  border-radius: 0 0 20px 20px;
+}
+.inputTodo,
+.inputTitle {
+  font-size: 20px;
+}
+.todoList {
+  list-style-type: none;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 25px;
+  display: flex;
+}
+
+/* section 2*/
+.diary {
+}
+.diary-description {
+  font-size: 2em;
+  color: rgb(255, 255, 255);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.today {
+  width: 100%;
+  height: 60%;
 }
