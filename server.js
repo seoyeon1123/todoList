@@ -2,6 +2,7 @@ const express = require("express");
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+require("dotenv").config();
 
 const app = express();
 app.use(bodyParser.json());
@@ -12,15 +13,18 @@ app.post("/send-email", (req, res) => {
   const recipientEmail = req.body.recipient;
 
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    service: "Naver",
+    host: "smtp.naver.com",
+    tls: true,
+    port: 587,
     auth: {
-      user: "woghks072@gmail.com",
-      pass: "lee355400!",
+      user: process.env.NAVER_EMAIL, // 네이버 이메일 주소
+      pass: process.env.NAVER_PASSWORD, // 네이버 앱 비밀번호
     },
   });
 
   const mailOptions = {
-    from: "woghks072@gmail.com",
+    from: process.env.NAVER_EMAIL, // 발신자 이메일
     to: recipientEmail,
     subject: "Email Subject",
     text: emailContent,
