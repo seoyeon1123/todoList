@@ -21,7 +21,7 @@ $text.addEventListener("keyup", (e) => {
   $newTodo.appendChild($label);
 
   const $deleteButton = document.createElement("button"); // 새로운 삭제 버튼 생성
-  $deleteButton.textContent = "❌"; // 삭제 아이콘 추가
+  $deleteButton.textContent = "❎"; // 삭제 아이콘 추가
   $deleteButton.className = "delete-button"; // 삭제 버튼에 클래스 추가
   $newTodo.appendChild($deleteButton); // 새로운 삭제 버튼을 할 일 요소에 추가
 
