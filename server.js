@@ -1,30 +1,35 @@
 const express = require("express");
-const nodemailer = require("nodemailer");
-const bodyParser = require("body-parser");
 const cors = require("cors");
-require("dotenv").config();
+const bodyParser = require("body-parser");
+const nodemailer = require("nodemailer");
 
 const app = express();
-app.use(bodyParser.json());
+
 app.use(cors());
+app.use(bodyParser.json());
+
+app.listen(5501, () => {
+  console.log("The server started on port 5501");
+});
 
 app.post("/send-email", (req, res) => {
+  console.log("request came");
   const emailContent = req.body.content;
   const recipientEmail = req.body.recipient;
 
   const transporter = nodemailer.createTransport({
     service: "Naver",
     host: "smtp.naver.com",
-    tls: true,
     port: 587,
+    secure: false,
     auth: {
-      user: process.env.NAVER_EMAIL, // 네이버 이메일 주소
-      pass: process.env.NAVER_PASSWORD, // 네이버 앱 비밀번호
+      user: "lsy_0906@naver.com",
+      pass: "M7RNR89DEVYP",
     },
   });
 
   const mailOptions = {
-    from: process.env.NAVER_EMAIL, // 발신자 이메일
+    from: '"Sender’s name" <lsy_0906@naver.com>',
     to: recipientEmail,
     subject: "Email Subject",
     text: emailContent,
@@ -39,9 +44,4 @@ app.post("/send-email", (req, res) => {
       res.status(200).send("Email has been sent successfully.");
     }
   });
-});
-
-const port = 5501;
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
 });
